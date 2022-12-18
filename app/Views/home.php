@@ -7,20 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="<?= base_url()?>/particlesjs/particles.js-2.0.0/particles.js">
+    <script src="<?= base_url() ?>/particlesjs/particles.js-2.0.0/particles.js">
     </script>
 </head>
 
 <body>
+    <ul id="menu">
+        <li>Accueil</li>
+        <li>Projets</li>
+        <li>Compétences</li>
+        <li>Etudes</li>
+    </ul>
+
+
+
+
+
+
     <div id="particle-container"></div>
-
-    
-
     <script defer>
-        particlesJS.load('particle-container', '<?= base_url()?>/particlesjs/particlesjs-config.json', function() {
+        particlesJS.load('particle-container', '<?= base_url() ?>/particlesjs/particlesjs-config.json', function() {
             console.log('callback - particles.js config loaded');
         });
     </script>
+
+
+
 
 
 </body>

@@ -1,15 +1,52 @@
 /* palette: 102542  F87060  CDD7D6 */
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+:root{
+    --blue: #102542;
+    --coral: #F87060;
+    --white: #CDD7D6;
+}
 
 body {
     padding: 0;
     margin: 0;
     width: 100%;
+    font-size: 1.5rem;
+    font-family: "Open Sans";
+}
+ul#menu{
+    text-decoration: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style:none;
+    padding: 10px;
+    background-color: var(--blue);
+    
+}
+
+ul#menu li{
+    margin-block: 2px;
+    width: fit-content;
+    cursor: pointer;
+    border: 2px solid var(--coral);
+    border-radius: 5px;
+    padding-inline: 5px;
+    background: linear-gradient(to left, var(--blue) 50%, var(--coral) 50%) right;
+    background-size: 200% 100%;
+    color: var(--coral);
+    transition: all .3s ease-out;
+}
+
+ul#menu li:hover{
+    background-position: left;
+    color: var(--blue);
+    box-shadow: var(--coral) 0px 0px 5px;
 }
 
 #particle-container {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
     background-color: #102542;
     background-size: cover;
