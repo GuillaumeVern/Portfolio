@@ -12,29 +12,37 @@
 </head>
 
 <body>
-    <ul id="menu">
-        <li>Accueil</li>
-        <li>Projets</li>
-        <li>Compétences</li>
-        <li>Etudes</li>
-    </ul>
-
-
-
-
+    <header>
+        <div class="menu-deroulant">
+            <ul id="menu">
+                <li>Accueil</li>
+                <li>Projets</li>
+                <li>Compétences</li>
+                <li>Etudes</li>
+            </ul>
+        </div>
+        <div class="menu-menu-deroulant">
+            <div class="menu-button">+</div>
+        </div>
+    </header>
 
 
     <div id="particle-container"></div>
-    <script defer>
+
+
+    <script>
         particlesJS.load('particle-container', '<?= base_url() ?>/particlesjs/particlesjs-config.json', function() {
             console.log('callback - particles.js config loaded');
         });
     </script>
+    <script>
+        var menu = document.querySelector(".menu-deroulant");
+        var buttonMenu = document.querySelector(".menu-menu-deroulant");
 
-
-
-
-
+        buttonMenu.addEventListener("click", function() {
+            menu.classList.toggle("active");
+        })
+    </script>
 </body>
 
 </html>
