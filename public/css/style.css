@@ -4,7 +4,11 @@
     --blue: #102542;
     --coral: #F87060;
     --white: #CDD7D6;
-    --header-height: 50px;
+    --header-height: 40px;
+}
+
+html{
+    overflow-x: hidden;
 }
 
 body {
@@ -13,6 +17,7 @@ body {
     width: 100%;
     font-size: 1.5rem;
     font-family: "Open Sans";
+    background-color: var(--white);
 }
 
 header {
@@ -26,6 +31,29 @@ div.menu-menu-deroulant{
     background-color: var(--blue);
     position: relative;
     z-index: 100;
+}
+
+div.menu-button{
+    height: var(--header-height);
+    width: 30px;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+div.menu-button img{
+    transition: all .5s;
+}
+
+div.menu-button img#bottom{
+    transform: translateY(-75%);
+}
+
+div.menu-button img#top.active{
+    transform: rotateZ(45deg);
+}
+
+div.menu-button img#bottom.active{
+    transform: translateY(-122%) rotateZ(-45deg);
 }
 
 div.menu-deroulant{
@@ -43,26 +71,21 @@ div.menu-deroulant.active{
 ul#menu{
     text-decoration: none;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 0;
     align-items: center;
     list-style: none;
-    padding: 10px;
     background-color: var(--blue);
     
 }
 
 ul#menu li{
-    margin-block: 3px;
-    width: fit-content;
+    width: 100%;
     cursor: pointer;
-    border: 1px solid var(--coral);
-    border-radius: 5px;
+    border-bottom: 1px solid var(--white);
     padding: 4px 9px 4px 9px;
-    background: linear-gradient(to left, var(--blue) 50%, var(--coral) 50%) right;
+    background: linear-gradient(to left, var(--blue) 50%, var(--white) 50%) right;
     background-size: 200% 100%;
-    color: var(--coral);
+    color: var(--white);
     transition: all .3s ease-out;
 }
 
@@ -72,12 +95,66 @@ ul#menu li:hover{
     box-shadow: var(--coral) 0px 0px 5px;
 }
 
+ul#menu li#first-border{
+    border-top: 1px solid var(--white);
+}
+
 #particle-container {
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    height: calc(55vh - var(--header-height));
     overflow: hidden;
     background-color: #102542;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+}
+
+div#main-header{
+    margin-left: 20px;
+    position: absolute;
+    top: 20px;
+    pointer-events: none;
+}
+
+div#main-header h1{
+    color: var(--coral);
+    margin-bottom: 0;
+}
+
+div#main-header h2{
+    color: var(--white);
+    margin-top: 0;
+}
+
+div.slope{
+    width: 110vw;
+    height: 50px;
+    background-color: var(--white);
+    transform: rotateZ(-6deg) translateY(-30px);
+}
+
+div.cards-container{
+    display:flex;
+    justify-content: center;
+}
+
+div.card{
+    max-width: 100%;
+    width: 275px;
+    border: 9px var(--blue) solid;
+    border-radius: 12px;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-bottom: 50px;
+    box-shadow: var(--blue) 12px 12px 12px;
+    transform: perspective(15cm) rotateX(calc(var(--y) * -1 * 45deg)) rotateY(calc(var(--x) * 45deg));
+}
+
+div.card:hover{
+}
+
+div.card img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 9px;
 }
